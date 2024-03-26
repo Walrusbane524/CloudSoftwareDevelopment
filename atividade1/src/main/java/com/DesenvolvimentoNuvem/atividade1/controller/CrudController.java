@@ -54,6 +54,8 @@ public class CrudController {
     public String showUpdateForm(@RequestParam("productId") int id, Model model){
         Product product = productService.findById(id);
 
+        model.addAttribute("product", product);
+
         return "products/product-form";
     }
 
